@@ -1,50 +1,36 @@
-What is Notepad++ ?
+Add Some New Features&nbsp;&nbsp;
 ===================
 
-[![GitHub release](https://img.shields.io/github/release/notepad-plus-plus/notepad-plus-plus.svg)](../../releases/latest)
-&nbsp;&nbsp;&nbsp;&nbsp;[![Appveyor build status](https://ci.appveyor.com/api/projects/status/github/notepad-plus-plus/notepad-plus-plus?branch=master&svg=true)](https://ci.appveyor.com/project/donho/notepad-plus-plus)
-&nbsp;&nbsp;&nbsp;&nbsp;[![Join the disscussions at https://community.notepad-plus-plus.org/](https://notepad-plus-plus.org/assets/images/NppCommunityBadge.svg)](https://community.notepad-plus-plus.org/)
+Due to personal habits, some common operations do not have shortcut keys, so I fork the repo and modify it to meet personal needs.
 
-Notepad++ is a free (free as in both "free speech" and "free beer") source code
-editor and Notepad replacement that supports several programming languages and
-natural languages. Running in the MS Windows environment, its use is governed by
-[GPL License](LICENSE).
+Here add some new features for Notepad++.
 
-See the [Notepad++ official site](https://notepad-plus-plus.org/) for more information.
+## 1.select current line
 
-Notepad++ Release Key
----------------------
-_Since the release of version 7.6.5 Notepad++ is signed using GPG with the following key:_
+In personal preference, Selecting current line  is a very frequent operation. However, Notepad++ has no operations can meet this needs completely.
 
-- **Signer:** Notepad++
-- **E-mail:** don.h@free.fr
-- **Key ID:** 0x8D84F46E
-- **Key fingerprint:** 14BC E436 2749 B2B5 1F8C 7122 6C42 9F1D 8D84 F46E
-- **Key type:** RSA 4096/4096
-- **Created:** 2019-03-11
-- **Expires:** 2024-03-11
+(split lines operation can meet my needs sometimes, but it will split one line to multiple lines when this line is longer than window size.)
 
-https://github.com/notepad-plus-plus/notepad-plus-plus/blob/master/nppGpgPub.asc
+Here are some screenshots:
 
+**1.I add it to Menu `Edit->Line Operation->Select Current line`, add set the short key as `ctrl+L`.**
 
-Supported OS
-------------
+(ps: `cut line` is `ctrl+L` and conflict with the key I add originally, so I change default key of `cut line` to `ctrl+alt+L` in source code).
 
-All the Windows systems still supported by Microsoft are supported by Notepad++. However, not all Notepad++ users can or want to use the newest system. Here is the [Supported systems information](SUPPORTED_SYSTEM.md) you may need in case you are one of them.
+![image-20221002181737323](./images/image-20221002181737323.png)
 
 
 
+**2.Mouse right key add it.**
 
-Build Notepad++
----------------
+![image-20221002181855834](./images/image-20221002181855834.png)
 
-Please follow [build guide](BUILD.md) to build Notepad++ from source.
+short key is `ctrl+L`,like this: 
 
+![image-20221002181942019](./images/image-20221002181942019.png)
 
-Contribution
-------------
+# Release Zip
 
-Contributions are welcome. Be mindful of our [Contribution Rules](CONTRIBUTING.md) to increase the likelihood of your contribution getting accepted.
+I upload a Zip to Release Page, so that you can use it directly.
 
-[Notepad++ Contributors](https://github.com/notepad-plus-plus/notepad-plus-plus/graphs/contributors)
-
+Or you can build it yourself.
