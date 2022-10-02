@@ -170,6 +170,7 @@
     #define    IDM_EDIT_INSERT_DATETIME_CUSTOMIZED              (IDM_EDIT + 86)
     #define    IDM_EDIT_COPY_ALL_NAMES                          (IDM_EDIT + 87)
     #define    IDM_EDIT_COPY_ALL_PATHS                          (IDM_EDIT + 88)
+    #define    IDM_EDIT_SELECT_LINE                             (IDM_EDIT + 89) /* add new line operation */
 
     #define    IDM_EDIT_AUTOCOMPLETE                            (50000 + 0)
     #define    IDM_EDIT_AUTOCOMPLETE_CURRENTFILE                (50000 + 1)
@@ -177,6 +178,8 @@
     #define    IDM_EDIT_AUTOCOMPLETE_PATH                       (50000 + 6)
     #define    IDM_EDIT_FUNCCALLTIP_PREVIOUS                    (50000 + 10)
     #define    IDM_EDIT_FUNCCALLTIP_NEXT                        (50000 + 11)
+
+
 
     
 #define    IDM_SEARCH    (IDM + 3000)

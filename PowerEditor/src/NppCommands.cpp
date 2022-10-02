@@ -1760,6 +1760,17 @@ void Notepad_plus::command(int id)
 			_pEditView->execute(SCI_ENDUNDOACTION);
 			break;
 
+		case IDM_EDIT_SELECT_LINE:
+			if (_pEditView->execute(SCI_GETSELECTIONS) == 1)
+			{
+				pair<size_t, size_t> lineRange = _pEditView->getSelectionLinesRange();
+				auto anchorPos = _pEditView->execute(SCI_POSITIONFROMLINE, lineRange.first);
+				auto caretPos = _pEditView->execute(SCI_GETLINEENDPOSITION, lineRange.second);
+				_pEditView->execute(SCI_SETSELECTION, caretPos, anchorPos);
+				_pEditView->execute(SCI_TARGETFROMSELECTION);
+			}
+			break;
+
 		case IDM_EDIT_SPLIT_LINES:
 		{
 			if (_pEditView->execute(SCI_GETSELECTIONS) == 1)
@@ -3916,6 +3927,7 @@ void Notepad_plus::command(int id)
 			case IDM_EDIT_DUP_LINE:
 			case IDM_EDIT_REMOVE_CONSECUTIVE_DUP_LINES:
 			case IDM_EDIT_REMOVE_ANY_DUP_LINES:
+			case IDM_EDIT_SELECT_LINE:
 			case IDM_EDIT_TRANSPOSE_LINE:
 			case IDM_EDIT_SPLIT_LINES:
 			case IDM_EDIT_JOIN_LINES:

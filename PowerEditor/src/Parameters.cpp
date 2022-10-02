@@ -333,6 +333,7 @@ static const WinMenuKeyDefinition winKeyDefs[] =
 	{ VK_NULL,    IDM_VIEW_SYNSCROLLH,                          false, false, false, nullptr },
 	{ VK_R,       IDM_EDIT_RTL,                                 true,  true,  false, nullptr },
 	{ VK_L,       IDM_EDIT_LTR,                                 true,  true,  false, nullptr },
+	{ VK_L,       IDM_EDIT_SELECT_LINE,                         true,  false, false, nullptr }, /*ctrl+L*/
 	{ VK_NULL,    IDM_VIEW_MONITORING,                          false, false, false, nullptr },
 
 	{ VK_NULL,    IDM_FORMAT_ANSI,                              false, false, false, nullptr },
@@ -550,7 +551,7 @@ static const ScintillaKeyDefinition scintKeyDefs[] =
 	{TEXT("SCI_DELLINELEFT"),             SCI_DELLINELEFT,             true,  false, true,  VK_BACK,     0},
 	{TEXT("SCI_DELLINERIGHT"),            SCI_DELLINERIGHT,            true,  false, true,  VK_DELETE,   0},
 	{TEXT("SCI_LINEDELETE"),              SCI_LINEDELETE,              true,  false, true,  VK_L,        0},
-	{TEXT("SCI_LINECUT"),                 SCI_LINECUT,                 true,  false, false, VK_L,        0},
+	{TEXT("SCI_LINECUT"),                 SCI_LINECUT,                 true,  true,  false, VK_L,        0},/* Ctrl+Alt+L */
 	{TEXT("SCI_LINECOPY"),                SCI_LINECOPY,                true,  false, true,  VK_X,        0},
 	{TEXT("SCI_LINETRANSPOSE"),           SCI_LINETRANSPOSE,           true,  false, false, VK_T,        0},
 	{TEXT("SCI_LINEDUPLICATE"),           SCI_LINEDUPLICATE,           false, false, false, 0,           0},

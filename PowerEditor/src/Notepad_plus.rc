@@ -472,6 +472,7 @@ BEGIN
             MENUITEM "Duplicate Current Line",                           IDM_EDIT_DUP_LINE
             MENUITEM "Remove Duplicate Lines",                           IDM_EDIT_REMOVE_ANY_DUP_LINES
             MENUITEM "Remove Consecutive Duplicate Lines",               IDM_EDIT_REMOVE_CONSECUTIVE_DUP_LINES
+            MENUITEM "Select Current Line",                              IDM_EDIT_SELECT_LINE
             MENUITEM "Split Lines",                                      IDM_EDIT_SPLIT_LINES
             MENUITEM "Join Lines",                                       IDM_EDIT_JOIN_LINES
             MENUITEM "Move Up Current Line",                             IDM_EDIT_LINE_UP

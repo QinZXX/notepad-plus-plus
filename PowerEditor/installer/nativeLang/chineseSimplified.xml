@@ -118,6 +118,7 @@ The comments are here for explanation, it's not necessary to translate them.
                     <Item id="42008" name="插入制表符(缩进)"/>
                     <Item id="42009" name="删除制表符(退格)"/>
                     <Item id="42010" name="复制当前行"/>
+                    <Item id="42011" name="选择当前行(&amp;L)"/>
                     <Item id="42079" name="删除重复行"/>
                     <Item id="42077" name="删除连续的重复行"/>
                     <Item id="42012" name="分割行"/>
@@ -1597,4 +1598,3 @@ Notepad++会在所有安装结束后重新启动。
         </MiscStrings>
     </Native-Langue>
 </NotepadPlus>
-
