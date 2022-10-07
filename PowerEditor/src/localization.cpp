@@ -20,6 +20,8 @@
 #include "EncodingMapper.h"
 #include "localization.h"
 #include "fileBrowser.h"
+#include "dbg.h"
+//#include "Notepad_Plus_Log.h"
 
 using namespace std;
 
@@ -270,7 +272,6 @@ generic_string NativeLangSpeaker::getLocalizedStrFromID(const char *strID, const
 
 MenuPosition & getMenuPosition(const char *id)
 {
-
 	int nbSubMenuPos = sizeof(menuPos)/sizeof(MenuPosition);
 
 	for (int i = 0; i < nbSubMenuPos; ++i) 
@@ -283,8 +284,11 @@ MenuPosition & getMenuPosition(const char *id)
 
 void NativeLangSpeaker::changeMenuLang(HMENU menuHandle)
 {
-	if (nullptr == _nativeLangA)
+	if (nullptr == _nativeLangA) {
+		//log_debug("changeMenuLang, _nativeLangA null");
+		dbg("_nativeLangA");
 		return;
+	}
 
 	TiXmlNodeA *mainMenu = _nativeLangA->FirstChild("Menu");
 	if (nullptr == mainMenu)
@@ -328,7 +332,10 @@ void NativeLangSpeaker::changeMenuLang(HMENU menuHandle)
 		element->Attribute("id", &id);
 		const char *name = element->Attribute("name");
 
-		const wchar_t *nameW = wmc.char2wchar(name, _nativeLangEncoding);
+		const wchar_t *nameW = wmc.char2wchar(name, _nativeLangEncoding); // zxqin: change item language
+		//log_debug("change menu process Item, name: %s, id: %d", name, id);
+		dbg(name);
+		dbg(id);
 		::ModifyMenu(menuHandle, id, MF_BYCOMMAND, id, nameW);
 	}
 
@@ -372,6 +379,9 @@ void NativeLangSpeaker::changeMenuLang(HMENU menuHandle)
 		}
 
 		const wchar_t *nameW = wmc.char2wchar(name, _nativeLangEncoding);
+		//log_debug("change menu process Sub menu getMenuPosition, name: %s, pos: %d", nameW, pos);
+		dbg(name);
+		dbg(pos);
 		::ModifyMenu(hMenu, pos, MF_BYPOSITION, 0, nameW);
 	}
 }

@@ -40,6 +40,8 @@
 #include "fileBrowser.h"
 #include "Common.h"
 #include "NppDarkMode.h"
+#include "dbg.h"
+//#include "Notepad_Plus_Log.h"
 
 using namespace std;
 
@@ -6528,6 +6530,9 @@ bool Notepad_plus::reloadLang()
 
     nppParam.reloadContextMenuFromXmlTree(_mainMenuHandle, _pluginsManager.getMenuHandle());
 
+	/*log_debug("%s-%s, %s, reload npp params, and try to change menu language now", 
+				__DATE__, __TIME__, __FUNCTION__);*/
+	dbg("reload npp params and change menu language now");
 	_nativeLangSpeaker.changeMenuLang(_mainMenuHandle);
     ::DrawMenuBar(_pPublicInterface->getHSelf());
 

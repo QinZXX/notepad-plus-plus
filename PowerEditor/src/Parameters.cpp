@@ -24,6 +24,8 @@
 #include "localizationString.h"
 #include "UserDefineDialog.h"
 #include "WindowsDlgRc.h"
+#include "dbg.h"
+//#include "Notepad_Plus_Log.h"
 
 #ifdef _MSC_VER
 #pragma warning(disable : 4996) // for GetVersionEx()
@@ -918,8 +920,12 @@ bool NppParameters::reloadLang()
 	generic_string nativeLangPath(_localizationSwitcher._nativeLangPath);
 
 	// if "nativeLang.xml" does not exist, use npp path
-	if (!PathFileExists(nativeLangPath.c_str()))
+	if (!PathFileExists(nativeLangPath.c_str())) // zxqin: bin\nativeLang.xml
 	{
+		/*log_debug("%s-%s, %s, nativelang file %s not exit, _nppPath=%s", 
+				__DATE__, __TIME__, __FUNCTION__, nativeLangPath.c_str(), _nppPath.c_str());*/
+		dbg(nativeLangPath.c_str());
+		dbg(_nppPath.c_str());
 		nativeLangPath = _nppPath;
 		pathAppend(nativeLangPath, generic_string(TEXT("nativeLang.xml")));
 		if (!PathFileExists(nativeLangPath.c_str()))

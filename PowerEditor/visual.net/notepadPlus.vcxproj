@@ -115,6 +115,7 @@
     <OutDir>..\bin\</OutDir>
     <IntDir>$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
+    <TargetName>zxqinNotepad++</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>..\bin64\</OutDir>
@@ -270,7 +271,7 @@
     <Link>
       <AdditionalDependencies>comctl32.lib;shlwapi.lib;shell32.lib;Oleacc.lib;Dbghelp.lib;Version.lib;Crypt32.lib;wintrust.lib;Sensapi.lib;wininet.lib;libscintilla.lib;liblexilla.lib;imm32.lib;msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <ShowProgress>LinkVerboseLib</ShowProgress>
-      <OutputFile>$(OutDir)notepad++.exe</OutputFile>
+      <OutputFile>$(OutDir)zxqinNotepad++.exe</OutputFile>
       <Version>1.0</Version>
       <TypeLibraryFile />
       <TypeLibraryResourceID>1</TypeLibraryResourceID>
@@ -293,7 +294,8 @@ copy ..\src\langs.model.xml ..\bin\langs.model.xml
 copy ..\src\stylers.model.xml ..\bin\stylers.model.xml
 copy ..\src\shortcuts.xml ..\bin\shortcuts.xml
 copy ..\src\contextMenu.xml ..\bin\contextMenu.xml
-</Command>
+copy ..\installer\nativeLang\english.xml ..\bin\Localization\english.xml
+copy ..\installer\nativeLang\chineseSimplified.xml ..\bin\Localization\chineseSimplified.xml</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -403,6 +405,7 @@ copy ..\src\contextMenu.xml ..\binarm64\contextMenu.xml
     <ClCompile Include="..\src\MISC\Common\verifySignedfile.cpp" />
     <ClCompile Include="..\src\MISC\md5\md5Dlgs.cpp" />
     <ClCompile Include="..\src\MISC\sha2\sha-256.cpp" />
+    <ClCompile Include="..\src\Notepad_Plus_Log.cpp" />
     <ClCompile Include="..\src\NppDarkMode.cpp" />
     <ClCompile Include="..\src\WinControls\AboutDlg\AboutDlg.cpp" />
     <ClCompile Include="..\src\WinControls\AnsiCharPanel\ansiCharPanel.cpp" />
@@ -670,6 +673,7 @@ copy ..\src\contextMenu.xml ..\binarm64\contextMenu.xml
     <ClInclude Include="..\src\DarkMode\DarkMode.h" />
     <ClInclude Include="..\src\DarkMode\IatHook.h" />
     <ClInclude Include="..\src\DarkMode\UAHMenuBar.h" />
+    <ClInclude Include="..\src\dbg.h" />
     <ClInclude Include="..\src\dpiManager.h" />
     <ClInclude Include="..\src\keys.h" />
     <ClInclude Include="..\src\localizationString.h" />

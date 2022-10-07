@@ -282,8 +282,10 @@ BOOL TreeView::setImageList(int w, int h, int nbImage, int image_id, ...)
 			imageID = va_arg(argLst, int);
 
 		hbmp = (HBITMAP)::LoadImage(_hInst, MAKEINTRESOURCE(imageID), IMAGE_BITMAP, bmDpiDynW, bmDpiDynH, 0);
-		if (hbmp == NULL)
+		if (hbmp == NULL) {
+			va_end(argLst);	
 			return FALSE;
+		}
 		ImageList_AddMasked(_hImaLst, hbmp, maskColour);
 		DeleteObject(hbmp);
 	}

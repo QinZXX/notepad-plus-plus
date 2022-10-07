@@ -1009,7 +1009,7 @@ bool matchInExcludeDirList(const TCHAR* dirName, const std::vector<generic_strin
 	return false;
 }
 
-bool allPatternsAreExclusion(const std::vector<generic_string> patterns)
+bool allPatternsAreExclusion(const std::vector<generic_string> &patterns)
 {
 	bool oneInclusionPatternFound = false;
 	for (size_t i = 0, len = patterns.size(); i < len; ++i)

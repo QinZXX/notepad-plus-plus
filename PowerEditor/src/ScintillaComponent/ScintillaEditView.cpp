@@ -1458,7 +1458,7 @@ void ScintillaEditView::defineDocType(LangType typeDoc)
 
 
 	defaultIndicatorStyle._styleID = SCE_UNIVERSAL_FOUND_STYLE_EXT1;
-	defaultIndicatorStyle._bgColor = cyan;
+	defaultIndicatorStyle._bgColor = liteRed;
 	pStyle = stylers.findByID(defaultIndicatorStyle._styleID);
 	setSpecialIndicator(pStyle ? *pStyle : defaultIndicatorStyle);
 
@@ -1478,7 +1478,7 @@ void ScintillaEditView::defineDocType(LangType typeDoc)
 	setSpecialIndicator(pStyle ? *pStyle : defaultIndicatorStyle);
 
 	defaultIndicatorStyle._styleID = SCE_UNIVERSAL_FOUND_STYLE_EXT5;
-	defaultIndicatorStyle._bgColor = darkGreen;
+	defaultIndicatorStyle._bgColor = blue;
 	pStyle = stylers.findByID(defaultIndicatorStyle._styleID);
 	setSpecialIndicator(pStyle ? *pStyle : defaultIndicatorStyle);
 
