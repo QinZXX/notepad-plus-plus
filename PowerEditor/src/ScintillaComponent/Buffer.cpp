@@ -211,6 +211,8 @@ void Buffer::setFileName(const TCHAR *fn, LangType defaultLang)
 			newLang = nppParamInst.getLangFromExt(ext);
 		}
 	}
+	else if (!isUntitled()) // existing file with no extension
+		newLang = L_TEXT;
 
 	if (newLang == defaultLang || newLang == L_TEXT)	//language can probably be refined
 	{
@@ -742,7 +744,7 @@ BufferID FileManager::loadFile(const TCHAR* filename, Document doc, int encoding
 		buf->setEncoding(-1);
 
 		// if no file extension, and the language has been detected,  we use the detected value
-		if (!newBuf->_isLargeFile && loadedFileFormat._language != L_TEXT)
+		if (!newBuf->_isLargeFile && ((buf->getLangType() == L_TEXT) && (loadedFileFormat._language != L_TEXT)))
 			buf->setLangType(loadedFileFormat._language);
 
 		setLoadedBufferEncodingAndEol(buf, UnicodeConvertor, loadedFileFormat._encoding, loadedFileFormat._eolFormat);
